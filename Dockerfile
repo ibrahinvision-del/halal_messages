@@ -27,7 +27,7 @@ RUN mkdir /staging
 
 # Build the application, with optimizations, with static linking, and using jemalloc
 # N.B.: The static version of jemalloc is incompatible with the static Swift runtime.
-RUN --mount=type=cache,target=/build/.build \
+RUN --mount=type=cache,id=s/d65871cf-22a2-4d0d-b13a-7ce887eb635c-/build/.build,target=/build/.build \
     swift build -c release \
         --product HalalMessagesServer \
         --static-swift-stdlib \
